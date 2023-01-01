@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: burlywood;
+        }
+        ul li{
+            list-style: none;
+        }
+        ul li{
+            display:inline-block;
+            margin: 0px 10px;
+        }
+    </style>
+    <script>
+        //Array.from(document.getElementsByTagName("p")).forEach((element)=>{
+         // element.style.background="red";
+        //})
+        function gen(){
+            
+            var x=document.getElementById("guess").value;
+            var arr=["w","s","g"];
+            var r=Math.round(Math.random()*10)%arr.length;
+            document.getElementById("out").innerHTML=r;
+            var g=arr[r];
+            if(g==x)
+            document.getElementById("out").innerHTML+="<br>tie";
+            else if((g=='w' && x=='s') || (g=='g' && x=='w') ||(g=='s' && x=='g'))
+            document.getElementById("out").innerHTML+="<br>player won";
+            else if((g=='s' && x=='w') || (g=='w' && x=='g') ||(g=='g' && x=='s'))
+            document.getElementById("out").innerHTML+="<br>computer won";
+        }
+    </script>
+</head>
+<body>
+    <h1>Snake - Water - Gun</h1>
+    <p>Enter the letter to play the game with monitor</p>
+    <ul>
+        <li>S - snake  </li>
+        <li>W - water   </li>
+        <li>G - gun</li>
+    </ul>
+    <input type="text" placeholder="enter letter" id="guess">
+    <input type="button" value="yes" onclick="gen()">
+    <p id="out"></p>
+</body>
+</html>

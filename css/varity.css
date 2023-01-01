@@ -1,0 +1,28 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+.top{
+    background-color: bisque;
+    height: 80px;
+    text-align: center;
+
+}
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20vh;
+    margin-bottom: 30px;
+}
+.card{
+    text-align: center;
+    padding-top: 50px ;
+    margin-left: 10vw;
+    width: 150px;
+    height: 100px;
+    border: 2px solid black;
+
+}

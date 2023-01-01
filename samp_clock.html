@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+        h1{
+            text-align: center;
+
+        }
+        p{
+            margin: 80px 45vw;
+            font-size: xx-large;
+            font-weight: 900;
+            border: 1px solid black;
+            width:150px;
+            height: 40px;
+            background-color: black;
+            color: aqua;
+            border-radius: 5px;
+
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Time-IST</h1>
+    <p id="here"></p>    
+    <script>
+        setInterval(function(){
+            let d=new Date()
+            let hr=d.getHours()
+            let min=d.getMinutes()
+            let sec=d.getSeconds()
+            let s=hr+":"+min+":"+sec;
+            document.getElementById("here").innerHTML=s;
+        },1000)
+    </script>
+    
+</body>
+</html>

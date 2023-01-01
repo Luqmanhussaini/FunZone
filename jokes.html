@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jokes</title>
+</head>
+<body>
+    <h1>Entertain By Your Selfes</h1>
+    <h2>Today's joke</h2>
+    <p id="here">
+
+    </p>
+    <script>
+        var arr=["1. What do you call a boomerang that won’t come back?A stick.",
+        "2. What does a cloud wear under his raincoat?Thunderwear.",
+        "3. Two pickles fell out of a jar onto the floor. What did one say to the other Dill with it.",
+        "4. What time is it when the clock strikes 13?Time to get a new clock.",        
+        "5. How does a cucumber become a pickle? It goes through a jarring experience.",
+        "6. What did one toilet say to the other? You look a bit flushed.",
+"7. What do you think of that new diner on the moon? Food was good, but there really wasn’t much atmosphere.",
+"8. Why did the dinosaur cross the road? Because the chicken wasn’t born yet.",
+"9. Why can’t Elsa from Frozen have a balloon? Because she will let it go, let it go.",
+"10. What musical instrument is found in the bathroom? A tuba toothpaste.",
+        ];
+        var r=Math.random()*10;
+        r=Math.round(r);
+        r=r%arr.length;
+//        document.getElementById("here").innerHTML=r;
+        document.getElementById("here").innerHTML=arr[r];
+        
+        
+    </script>
+</body>
+</html>

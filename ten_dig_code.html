@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            background-color: aqua;
+        }
+        h1{
+            text-align: center;
+        }
+        #but{
+            width: 80px;
+            height: 30px;
+            margin-left: 45vw;
+            margin-top: 50px;
+            margin-right: 100%;
+        }
+        #box{
+            width: 200px;
+            height: 20px;
+            margin-top: 20px;
+            margin-left: 40vw;
+        }
+        #final{
+            width: 100px;
+            height: 20px;
+            margin-top: 30px;
+            margin-left: 45vw;
+        }
+        #here{
+            width: 100px;
+            height: 100px;
+            border: 4px solid black;
+            text-align: center;
+            margin-left: 43vw;
+            margin-top: 50px;
+            font-weight: 600;
+            font-size: 80px;
+        }
+        #arrow{
+            font-size: 50px;
+            margin-top: 20px;
+            width: 100px;
+            height: 100px;
+/*            border: 2px solid red;*/
+            margin-left: 45vw;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>10-Digit Code Guess</h1>
+    <p class="start">
+        <input type="button" name="Start" id="but" value="start" onclick="started()">
+        <p id="here"></p>
+        <p id="arrow"></p>
+        <input type="text" name="" id="box" placeholder="enter the code">
+        <input type="submit" name="" id="final" value="check" onclick="doit()">
+    </p>
+
+    <p id="there"></p>
+    <script>
+        let s="";
+        //function down(){
+            
+        //}
+        function started(){
+            document.getElementById("arrow").innerHTML="🡩";
+            document.getElementById("there").innerHTML="";
+            const x=setInterval(function run(){
+                let r=Math.random()*10;
+                r=Math.round(r);
+                if(r==10)r=0;
+                s=s.concat(String(r));
+                
+                document.getElementById("here").innerHTML=r;
+//                document.getElementById("here").style.opacity=(document.getElementById("here").style.opacity==0?1:0);
+                if(s.length==10){
+                    clearInterval(x);
+                    document.getElementById("arrow").innerHTML="🡫";
+                }
+
+            },1000);
+
+        }
+        function doit(){
+            let read=document.getElementById("box").value;
+            read=String(read);
+            if(s.localeCompare(read)==0){
+                document.getElementById("there").innerHTML="correct";
+
+            }
+            else
+            document.getElementById("there").innerHTML="not correct and the answer is: "+s;
+            s="";
+
+        }
+
+
+
+
+        
+    </script>
+</body>
+</html>

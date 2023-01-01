@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        body{
+            text-align: center;
+        }
+        #but{
+            margin: 0px 10px;
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Guess The Number</h1>
+    <input type="text" id="guess" placeholder="enter the number">
+    <button onclick="check()">go</button>
+    <p id="here"></p>
+    <p id="final"></p>
+    <p class="dup"></p>
+    <script>
+        var r= Math.round( Math.random()*100);
+        document.body.style.backgroundColor="pink";
+        var c=0;
+        function check(){
+            var x=document.getElementById("guess").value;
+            x=parseInt(x);
+            if(x<r)
+            document.getElementById("here").innerHTML="it's greater than "+x;
+            if(x>r)
+            document.getElementById("here").innerHTML="it's smaller than "+x;
+            if(x==r){
+                document.getElementById("here").innerHTML="Congrats you have guessed the right answer at "+c+" attempts";
+                score(c);
+            }
+            c++;
+            if(c==10)
+                score(c);
+        }
+        function score(c){
+            var mark=10-c;
+            if(mark==0)
+            document.getElementById("final").innerHTML="you  have loss with max trails and scored "+mark+" points!!!";
+            else
+            document.getElementById("final").innerHTML="you  have scored "+mark+" points!!!";
+            var temp=document.getElementById("here");
+            document.getElementById("dup").innerHTML=temp+" dsfds";
+
+
+        }
+    </script>
+</body>
+</html>
